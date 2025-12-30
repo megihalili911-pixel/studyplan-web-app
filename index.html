@@ -1,0 +1,172 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>StudyPlan — Smart Study Platform</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="navbar">
+  <h1 class="logo">StudyPlan</h1>
+
+  <nav>
+    <ul>
+      <li onclick="showSection('home')">Home</li>
+      <li onclick="showSection('dashboard')">Dashboard</li>
+      <li onclick="showSection('calendar')">Calendar</li>
+      <li onclick="showSection('planner')">Planner</li>
+      <li onclick="showSection('projects')">Projects</li>
+      <li onclick="showSection('timer')">Timer</li>
+      <li onclick="showSection('about')">About</li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="section active">
+  <div class="hero">
+    <div>
+      <h2>Organize Your Study Life Effortlessly</h2>
+      <p>Plan smarter, learn faster, achieve more. StudyPlan gives you the tools to stay disciplined, motivated, and productive.</p>
+      <button onclick="showSection('dashboard')" class="cta">Get Started</button>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df" class="heroImg">
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <img src="https://images.unsplash.com/photo-1584697964190-9f7c0e90a962">
+      <h3>Smart Scheduling</h3>
+      <p>Create weekly and monthly plans with drag-and-drop study blocks.</p>
+    </div>
+
+    <div class="feature">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+      <h3>Project Planning</h3>
+      <p>Break down study goals into structured projects and tasks.</p>
+    </div>
+
+    <div class="feature">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+      <h3>Focus Mode</h3>
+      <p>Pomodoro timer helps boost concentration and productivity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="section">
+  <h2>Your Dashboard</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Tasks Scheduled</h3>
+      <p id="taskCount">0</p>
+    </div>
+
+    <div class="card">
+      <h3>Projects</h3>
+      <p id="projectCount">0</p>
+    </div>
+
+    <div class="card">
+      <h3>Timer Sessions</h3>
+      <p id="timerCount">0</p>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDAR -->
+<section id="calendar" class="section">
+  <h2>Study Calendar</h2>
+
+  <div class="calendar-toggle">
+    <button onclick="switchCalendar('week')">Weekly</button>
+    <button onclick="switchCalendar('month')">Monthly</button>
+  </div>
+
+  <div id="weekly-calendar" class="calendar-view">
+    <div class="week-grid" id="weekGrid"></div>
+  </div>
+
+  <div id="monthly-calendar" class="calendar-view hidden">
+    <div class="month-grid" id="monthGrid"></div>
+  </div>
+</section>
+
+<!-- PLANNER -->
+<section id="planner" class="section">
+  <h2>Routine & Study Planner</h2>
+
+  <div class="planner-container">
+    <div>
+      <input id="taskName" placeholder="Study subject">
+      <input id="taskDuration" placeholder="Duration (min)">
+      <button onclick="addTask()">Add Block</button>
+    </div>
+
+    <div class="task-pool" id="taskPool">
+      <h3>Drag & Drop Blocks</h3>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <h2>Study Projects</h2>
+
+  <div class="project-input">
+    <input id="projectTitle" placeholder="Project title">
+    <input id="projectDesc" placeholder="Short description">
+    <button onclick="addProject()">Add Project</button>
+  </div>
+
+  <div id="projectList" class="projects"></div>
+</section>
+
+<!-- TIMER -->
+<section id="timer" class="section">
+  <h2>Focus Timer</h2>
+
+  <div class="timerBox">
+    <p id="timerDisplay">25:00</p>
+
+    <div>
+      <button onclick="startTimer()">Start</button>
+      <button onclick="pauseTimer()">Pause</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>About StudyPlan</h2>
+  <p>
+    StudyPlan is a smart planning platform designed to help students stay organized, disciplined, and productive.
+    Built with modern design principles, it provides planning tools, visualization, scheduling, and productivity tracking.
+  </p>
+
+  <div class="team">
+    <div>
+      <img src="https://images.unsplash.com/photo-1603415526960-f7e0328ccd0c">
+      <h3>Our Mission</h3>
+      <p>To help every learner unlock their best potential.</p>
+    </div>
+
+    <div>
+      <img src="https://images.unsplash.com/photo-1551434678-e076c223a692">
+      <h3>Future Vision</h3>
+      <p>Personalized AI study planning, analytics & real productivity insights.</p>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
